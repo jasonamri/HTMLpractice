@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+    <head lang="en">
+ 
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <title>Radio info text parser</title>
+   
+   <script>
+         var addy;
+         var arr = [];
+         var buff;
+         var wc = 0;
+         var text = document.getElementById('field').innerHTML;
+         
+	 function capture() {
+         wc = 0;   
+	 arr = [];
+         addy=document.getElementById('input').value;
+
+         buff = addy.substr(0, addy.indexOf(' ',0));
+
+         for (arr = []; buff!=="";) {
+   
+         addy = addy.substring(buff.length+1);
+         arr.push(buff);
+         buff = addy.substr(0, addy.indexOf(' ',0));
+     }
+ document.getElementById('field').innerHTML = arr;
+   
+    }
+         
+         
+        
+         
+    
+      
+        
+        
+        
+             
+        
+        
+	 
+   
+   </script>
+ 
+ </head>
+ <body onload="startup();">
+ 
+ <p id="field">Loading...</p>
+ <input type="text" id="input" onkeydown="if (event.keyCode === 13) {capture();}">
+ 
+ 
+ </body>

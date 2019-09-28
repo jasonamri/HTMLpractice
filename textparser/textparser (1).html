@@ -1,0 +1,27 @@
+ <html>
+ <head lang="en">
+ 
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <title>Radio info text parser</title>
+   
+   <script>
+     var text;
+	 var spl;
+	 var arr;
+	 
+	 function start () {
+	 text=document.getElementById('input').value.split(" ");
+	 spl="[" + text + "]"
+	 alert(spl[1]);
+	 }
+   
+   </script>
+ 
+ </head>
+ <body onload="startup();">
+ 
+ <p id="field">Loading...</p>
+ <input type="text" id="input" onkeydown="if (event.keyCode == 13) start();" />
+ 
+ </body>
+ </html>

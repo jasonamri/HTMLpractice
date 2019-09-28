@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <title>Welcome Page</title>
+    <script type="text/javascript" language="javascript"> 
+function addText() {
+    var textfeild = document.getElementById("textfeil");
+    var myTarget = document.getElementById("myContainer");
+    myTarget.innerText = "Welcome, " + textfeild.value;
+} 
+</script> </head>
+  <body>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td> 
+              Hello, my name is... <input type="text" id="textfeil"/> <input type="button" onclick="addText()" value="Submit"/>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </td>
+          <td>
+            <div id="myContainer" style="font-size:250%;color:blue;font-weight:bold;margin-right:25px;margin-left:25px;margin-top:25px">
+            </div>
+            <br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</html>

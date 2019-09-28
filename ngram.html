@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ngram Veiewer</title>
+</head>
+
+<body>
+<form id="query" action="http://books.google.com/ngrams/graph" method="get" name="input">
+      <div class="query_graphthese_line">Graph these <span style="color:#3369e8;font-weight:bold">case-sensitive</span> comma-separated phrases:
+        <input type="text" name="content" size="60" value="Amri" maxlength="240">
+      </div>
+      <div class="query_dcs_line">between
+        <input type="text" name="year_start" size="4" value="1500" maxlength="4">
+        and
+        <input type="text" name="year_end" size="4" value="2008" maxlength="4">
+        from the corpus
+        <select name="corpus">
+          
+          <option value="17">
+            American English</option>
+          
+          <option value="18">
+            British English</option>
+          
+          <option value="23">
+            Chinese (simplified)</option>
+          
+          <option value="15" selected="">
+            English</option>
+          
+          <option value="16">
+            English Fiction</option>
+          
+          <option value="19">
+            French</option>
+          
+          <option value="20">
+            German</option>
+          
+          <option value="24">
+            Hebrew</option>
+          
+          <option value="22">
+            Italian</option>
+          
+          <option value="25">
+            Russian</option>
+          
+          <option value="21">
+            Spanish</option>
+          
+          <option value="5">
+            American English (2009)</option>
+          
+          <option value="6">
+            British English (2009)</option>
+          
+          <option value="11">
+            Chinese (simplified) (2009)</option>
+          
+          <option value="0">
+            English (2009)</option>
+          
+          <option value="4">
+            English Fiction (2009)</option>
+          
+          <option value="1">
+            English One Million (2009)</option>
+          
+          <option value="7">
+            French (2009)</option>
+          
+          <option value="8">
+            German (2009)</option>
+          
+          <option value="9">
+            Hebrew (2009)</option>
+          
+          <option value="12">
+            Russian (2009)</option>
+          
+          <option value="10">
+            Spanish (2009)</option>
+          
+        </select>
+        with smoothing of
+        <select name="smoothing">
+          
+          <option value="0" selected="">
+            0</option>
+          
+          <option value="1">
+            1</option>
+          
+          <option value="2">
+            2</option>
+          
+          <option value="3">
+            3</option>
+          
+          <option value="4">
+            4</option>
+          
+          <option value="5">
+            5</option>
+          
+          <option value="6">
+            6</option>
+          
+          <option value="7">
+            7</option>
+          
+          <option value="8">
+            8</option>
+          
+          <option value="9">
+            9</option>
+          
+          <option value="10">
+            10</option>
+          
+          <option value="20">
+            20</option>
+          
+          <option value="30">
+            30</option>
+          
+          <option value="40">
+            40</option>
+          
+          <option value="50">
+            50</option>
+          
+        </select>.
+      </div>
+      
+      <input type="hidden" name="share" value="">
+      
+      <div class="query_submit_line">
+        <input type="submit" value="Search lots of books">
+      </div>
+    </form>
+</body>
+</html>

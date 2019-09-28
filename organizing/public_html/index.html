@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>hi</title>    
+        <script>
+            
+           var wc=0; 
+           var arr = ["12345678901234567","1"," "," "," "];
+           var display = [];
+           var com;
+           var buff2;
+           
+           function test() {
+          
+           // if character at 11 or 12: 
+           if (arr[wc].length===12||arr[wc].length+1===12) {
+               alert("equals 12"); 
+               display.push(arr[wc]); 
+               wc++;
+               continue;
+           } 
+           
+           if (arr[wc].length>12) {
+               
+               buff2= arr[wc].substring(0, 12);
+               display.push(buff2);
+               
+               buff2= arr[wc].substring(arr[wc].length - 12, arr[wc].length);
+               display.push(buff2);
+               
+               wc++;
+               continue;
+           }
+          
+           
+           //possible 2 words
+           if (arr[wc].length<11) {
+               alert('possible 2 words');
+               //check 2
+               if ((arr[wc].length + arr[wc+1].length + 1)<=12) {
+                   alert('check 2');
+                   //check 3
+                   if ((arr[wc].length + arr[wc+1].length + arr[wc+2].length + 2)<=12) { 
+                       alert('check 3');
+                       //check 4
+                       if ((arr[wc].length + arr[wc+1].length + arr[wc+2].length + arr[wc+3].length + 3)<=12) {
+                           alert('check 4');
+                           //check 5
+                           if ((arr[wc].length + arr[wc+1].length + arr[wc+2].length + arr[wc+3].length + arr[wc+4].length + 4)<=12) {
+                           alert('check 5');
+                           display.push(arr[wc]+" "+arr[wc+1]+" "+arr[wc+2]+" "+arr[wc+3]+" "+arr[wc+4]);
+                           wc++;
+                           wc++;
+                           wc++;
+                           wc++;
+                           wc++;
+                           
+                           
+                           //else 4 words
+                           } else {
+                           alert('else 4 words');
+                           display.push(arr[wc]+" "+arr[wc+1]+" "+arr[wc+2]+" "+arr[wc+3]);
+                           wc++;
+                           wc++;
+                           wc++;
+                           wc++;
+                           
+                           }
+                       
+                       //else 3 words
+                       } else {
+                       alert('else 3 words');
+                       display.push(arr[wc]+" "+arr[wc+1]+" "+arr[wc+2]);
+                       wc++;
+                       wc++;
+                       wc++;
+                        
+                       }
+                  
+                  
+                    //else 2 words
+                    } else {
+                    alert('else 2 words');
+                    display.push(arr[wc]+" "+arr[wc+1]);
+                    wc++;
+                    wc++;
+                      
+                    } 
+                
+                
+               //else 1 word     
+               } else {
+               alert('else 1 word');
+               display.push(arr[wc]);
+               wc++;
+               
+               }
+               
+           // }  
+           continue;
+           }
+           
+           
+          alert(display);
+          alert(wc);
+          
+           
+           
+       }
+            
+        </script>  
+        
+        
+    </head>
+    <body onload="test();">
+        
+    </body>
+</html>
