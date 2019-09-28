@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <title>Login</title>
+    <script type="text/javascript">
+	 //global variables
+     var username=document.getElementById("username").value;
+     var password=document.getElementById("password").value;
+	 //functions:
+	 //function to check user and pass
+	 function login(){
+		//update user and pass and make case insensitive
+		username=username.toLowerCase();
+        password=password.toLowerCase();
+		//check if user and pass works
+        if (username=="jason" && password=="password") { correct(); }
+        else if (username=="nur" && password=="1234") { correct(); } 
+		else {incorrect();}
+		
+      }
+	  //function to do if it is correct
+	  function correct () {
+        window.location.href = "http://www.google.ca";
+	  }
+	  //function to do if it is incorrect
+	  function incorrect () {
+	    alert("Invalid login!");
+        document.getElementById("password").value='';
+	  }
+    </script>
+  </head>
+  <body>
+    <p>Username:</p>
+    <input type="text" name="username" id="username" onKeyDown="if(event.keyCode==13) {login()}" />
+    <p>Password:</p>
+    <input type="password" id="password" name="password" onKeyDown="if(event.keyCode==13) {login()}" />
+    <input type="button" value="Login" onclick="login()" />
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=us-ascii" />
+    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+    <title>Intergers Math Game by: Jason and Justin</title>
+    <script type="text/javascript">
+//<![CDATA[
+  var num12=""
+  var num22=""
+  var num32=""
+  var oper1=""
+  var oper2=""
+  var oper3=""
+  var oper4=""
+  var ques=""
+  var num1=""
+  var num2=""
+  var num3=""
+  var points=0
+  var part1=""
+  var part2=""
+  var hint1=""
+  var hint2=""
+  var credits="Code by: Jason, Idea by: Justin"
+  var message=""
+  function create() {
+  num12=Math.floor(Math.random()*9) + 1;
+  num12 *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+  num22=Math.floor(Math.random()*9) + 1;
+  num22 *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+  num32=Math.floor(Math.random()*9) + 1;
+  num32 *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+  oper1= Math.floor(Math.random()*2) + 1;
+  oper2= Math.floor(Math.random()*2) + 1;
+  if (oper1<2)
+  {
+  oper3="+";
+  }
+  else
+  {
+  oper3="-";
+  }
+  if (oper2<2)
+  {
+  oper4="+";
+  }
+  else
+  {
+  oper4="-";
+  }
+  if (num12>0) {num1="+" + num12} else {num1=num12}
+  if (num22>0) {num2="+" + num22} else {num2=num22}
+  if (num32>0) {num3="+" + num32} else {num3=num32}
+  ques=num1 + " " + oper3 + " " + num2 + " " + oper4 + " " + num3
+  document.getElementById("p1").innerHTML=ques;
+  if (oper1<2)
+  {
+  part1=num12+num22
+  }
+  else
+  {
+  part1=num12-num22;
+  }
+  if (oper2<2)
+  {
+  part2=part1+num32;
+  }
+  else
+  {
+  part2=part1-num32;
+  }
+  if (num22>0) {if (oper1<2) {hint1=num1+" + "+num22} else {hint1=num1+" - "+num22}} else {hint1=num1+" "+oper3+" "+num22}
+  if (num32>0) {if (oper2<2) {hint2=hint1+" + "+num32} else {hint2=hint1+" - "+num32}} else {hint2=hint1+" "+oper4+" "+num32}
+  document.getElementById("points").innerHTML=points;
+  }
+  function check() {
+  if(document.getElementById("email").value==part2) {correct()} else {wrong()}
+  }
+  function correct() {
+  points=points+100
+  create()
+  document.getElementById("form").reset()
+  document.getElementById("email").focus()
+  document.getElementById("email").style.border="1px solid #00ff00"
+  document.getElementById("p2").innerHTML="Correct!"
+  document.getElementById("hinttxt").innerHTML=""
+  }
+  function wrong() {
+  points=points-50
+  create()
+  document.getElementById("form").reset()
+  document.getElementById("email").focus()
+  document.getElementById("email").style.border="1px solid #ff0000"
+  document.getElementById("p2").innerHTML="Incorrect!"
+  document.getElementById("hinttxt").innerHTML=""
+  }
+  function hint() {
+  document.getElementById("hinttxt").innerHTML=hint2
+  }
+  function admin() {
+  points=points+100
+  }
+  function color(){
+  var color=document.getElementById("email").value
+  document.bgColor = color 
+  }
+  //]]>
+  </script>
+    <style type="text/css">
+/*<![CDATA[*/
+  form.c8 {display:none}
+  input.c7 {border:1px solid #000000}
+  div.c6 {height:115px}
+  div.c5 {float:right; width:25%;}
+  textarea.c4 {width:100%}
+  h2.c3 {text-align: center}
+  div.c2 {float:left; width:75%;}
+  div.c1 {text-align: center}
+  /*]]>*/
+  </style>
+  </head>
+  <body onload="create()">
+    <div class="c1"> <textarea id="hinttxt" rows="2" cols="20" readonly="readonly"></textarea><a
+        href="#"
+        onclick="hint()"
+        ondblclick="alert(part2)"><img
+          width="50"
+          height="50"
+          alt="hint"
+          src="http://goo.gl/otZG6u" /></a>
+    </div>
+    <div class="c1" id="correctdiv">
+      <p id="p2" ondblclick="alert(credits)">Answer below and press enter to
+        submit...</p>
+    </div>
+    <div id="main">
+      <div class="c2" id="questiondiv"> <br />
+        <h1 id="p1" ondblclick="color()">Loading...</h1>
+      </div>
+      <div class="c5">
+        <h2 class="c3" ondblclick="admin()">Points</h2>
+        <textarea class="c4" id="points" rows="2" cols="40" readonly="readonly"></textarea>
+      </div>
+    </div>
+    <div class="c6"></div>
+    <div class="c1" id="answerdiv">
+      <form onsubmit="check()" action="#" id="form" name="form"> <p1>Answer:</p1> <input
+          type="text"
+          id="email"
+          class="c7" />
+      </form>
+    </div>
+  </body>
+</html>

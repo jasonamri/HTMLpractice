@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html style="height:100%">
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Color Changer</title>
+    <script type="text/javascript">
+      function changecolor() {
+        var div123=document.getElementById("div1234")
+        var input=document.getElementById("inputtext").value
+        var p=document.getElementById("p123")
+            document.bgColor=input
+            div123.style.opacity="0"
+            p.style.opacity="1"
+              }
+      function show() {
+        var div123=document.getElementById("div1234")
+        var input=document.getElementById("inputtext")
+        if (div123.style.opacity=="0") {
+	    div123.style.opacity="1";
+		document.bgColor="white";
+		document.getElementById("inputtext").value='';
+		document.getElementById("p123").style.opacity="0";
+		}
+        input.focus()
+      }
+    </script>
+  </head>
+  <body style=" height:100%">
+    <div id="div1234" onClick="show()" style="height:100%">
+      
+        <p>Type Color Here:</p>
+        <input id="inputtext" type="text" onkeydown="if(event.keyCode==13) {changecolor()}"> 
+      <p style="left: 1;position: fixed;text-align: left;bottom: 0;width: 100%;">
+        Made by: Jason Amri </p>
+    </div>
+    <p id="p123" style="text-shadow:
+    -1px -1px 0 black,    1px -1px 0 black,
+    -1px 1px 0 black,    1px 1px 0 black;color: white;opacity:0;left: 1;position: fixed;text-align: left;bottom: 0;width: 100%;">
+      Click to reset </p>
+  </body>
+</html>

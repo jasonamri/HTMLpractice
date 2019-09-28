@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Register</title>
+    <script>
+	
+//cookie functions (created by www.w3schools.com)
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+function checkCookie(cname) {
+    var user = getCookie(cname);
+    if (user != "") {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+function register () {
+	    var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+		//update user and pass and make case insensitive
+		username=username.toLowerCase();
+        password=password.toLowerCase();
+		
+		if (username!=''&&password!='') {
+		    setCookie("username",username,30);
+		    setCookie("password",password,30);
+		    
+			alert(username);
+			alert(getCookie("username"));
+			alert('Sucessfully Registered');
+			window.location.href = "/Users/jasonamri/Projects/Code/login.html"
+		} else {
+			alert('Please Fill All Fields');
+		}
+}
+
+     function checkC() {
+		  if (checkCookie('username')==1) {
+			  alert('User Already Registered');
+			  window.location.href = "/Users/jasonamri/Projects/Code/login.html";
+		  }
+	  }
+
+	</script>
+  </head>
+
+  <body onload="checkC();">
+    <p>Username:</p>
+    <input type="text" name="username" id="username" onKeyDown="if(event.keyCode==13) {register();}" />
+    <p>Password:</p>
+    <input type="password" id="password" name="password" onKeyDown="if(event.keyCode==13) {register();}" />
+    
+    <input type="button" value="Register" onclick="register();" />
+  </body>
+</html>
